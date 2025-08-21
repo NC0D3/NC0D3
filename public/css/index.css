@@ -1,0 +1,107 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-weight: normal;
+    margin-bottom: 1em;
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    /*  NAVBAR pasa a columna  */
+    .navbar-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-logo {
+        padding: 0.4em 0;
+    }
+
+    /* aumenta espacio para navbar en móvil (≈ 4 links) */
+    .content {
+        padding-top: 180px;
+    }
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em auto;
+    max-width: 800px;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.about-img {
+    width: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 500px;
+    color: white;
+    text-align: left;
+}
+
+/* NAVBAR STYLES */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8em;
+}
+
+.navbar-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.content {
+    padding-top: 80px;
+}
