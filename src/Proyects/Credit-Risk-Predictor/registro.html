@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #92a8d1 0%, #f7cac9 100%);
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #registroForm {
+      background: #fff;
+      padding: 2em 3em;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(80,80,80,0.18);
+      min-width: 320px;
+      width: 100%;
+      max-width: 370px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    label {
+      color: #333;
+      font-size: 1.1em;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+    }
+    input[type="text"], input[type="number"], input[type="email"], select {
+      margin-top: 7px;
+      padding: 0.7em;
+      font-size: 1.05em;
+      border: 1px solid #92a8d1;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    input:focus, select:focus {
+      border-color: #ad1457;
+    }
+    button, .logout-btn {
+      background: linear-gradient(90deg, #ad1457 0%, #e53935 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.85em 0;
+      font-size: 1.18em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(229,57,53,0.15);
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.17s;
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+    }
+    button:hover, button:focus, .logout-btn:hover, .logout-btn:focus {
+      background: linear-gradient(90deg, #e53935 0%, #ad1457 100%);
+      transform: scale(1.06);
+    }
+    .logout-btn {
+      margin-top: 20px;
+      font-size: 1.1em;
+      padding: 0.7em 0;
+      max-width: 370px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>Formulario de Registro</h2>
+  <form id="registroForm" method="POST" action="/registro">
+    <label>Nombre:
+      <input type="text" name="nombre" required>
+    </label>
+    <label>Edad:
+      <input type="number" name="edad" min="0" max="120" required>
+    </label>
+    <label>Género:
+      <select name="genero" required>
+        <option value="" disabled selected>Selecciona</option>
+        <option value="Male">Masculino</option>
+        <option value="Female">Femenino</option>
+        <option value="Other">Otro</option>
+      </select>
+    </label>
+    <label>Educacion:
+        <select name="educacion" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option value="High School">Preparatoria</option>
+          <option value="Bachelor">Universidad</option>
+          <option value="Master">Maestria</option>
+          <option value="Doctorate">Doctorado</option>
+        </select>
+    </label>
+    <label>Salario anual:
+      <input type="number" name="salario" min="0" step="0.01" required>
+    </label>
+    <label>Experiencia en años:
+        <input type="number" name="xp" min="0" step="1" required>
+    </label>
+    <label>Vivienda:
+        <select name="vivienda" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option value="RENT">Renta</option>
+          <option value="OWN">Propietario</option>
+          <option value="MORTAGE">Hipoteca</option>
+          <option value="OTHER">Otro</option>
+        </select>
+    </label>
+    <label>Cantidad del prestamo:
+        <input type="number" name="cantidad" min="0" step="0.01" required>
+    </label>
+    <label>Intencion del prestamo:
+        <select name="intencion" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option value="PERSONAL">Personal</option>
+          <option value="EDUCATION">Educacion</option>
+          <option value="MEDICAL">Medico</option>
+          <option value="VENTURE">Emprendimiento</option>
+          <option value="HOMEIMPROVEMENT">Mejora del hogar</option>
+          <option value="DEBTCONSOLIDATION">Consolidación de deudas</option>
+        </select>
+    </label>
+    <label>Historial Crediticio:
+        <input type="number" name="HC" min="0" step="1" required>
+    </label>
+    <label>Score Crediticio:
+        <input type="number" name="Score" min="0" step="1" required>
+    </label>
+    <label>Deudor de creditos:
+        <select name="Deudor" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option value="Yes">Si</option>
+          <option value="No">No</option>
+        </select>
+    </label>
+    <button type="submit">Registrar</button>
+  </form>
+  <a href="/logout" class="logout-btn">Cerrar sesión</a>
+</body>
+</html>
